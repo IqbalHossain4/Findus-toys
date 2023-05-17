@@ -9,10 +9,16 @@ const Header = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/product">Toys</Link>
+        <Link to="/product">All Toys</Link>
       </li>
       <li>
-        <Link to="/about">About</Link>
+        <Link to="/product">My Toys</Link>
+      </li>
+      <li>
+        <Link to="/product">Add A Toy</Link>
+      </li>
+      <li>
+        <Link to="/about">Blogs</Link>
       </li>
     </>
   );
@@ -40,15 +46,30 @@ const Header = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 font-semibold"
           >
             {navItems}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+        <div className="flex items-center">
+          <div className="w-[80px] h-[50px]">
+            <Link to="/">
+              <img
+                className="w-full h-full"
+                src={
+                  "https://cdn.dribbble.com/users/1700393/screenshots/14210857/media/53dda477de8b0c57b3abd5d144e89312.png"
+                }
+                alt=""
+              />
+            </Link>
+          </div>
+          <div>
+            <h1 className="font-bold text-1xl text-yellow-500">FINDUS TOYS</h1>
+          </div>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{navItems}</ul>
+        <ul className="menu menu-horizontal px-1 font-semibold">{navItems}</ul>
       </div>
 
       <div className="navbar-end">

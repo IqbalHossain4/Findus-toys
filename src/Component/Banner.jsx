@@ -1,38 +1,84 @@
-import React from 'react';
+import React from "react";
 
 const Banner = () => {
-    return (
-        <div className="carousel w-full">
-  <div id="slide1" className="carousel-item relative w-full">
-    <img src="/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" className="w-full" />
-    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide4" className="btn btn-circle">❮</a> 
-      <a href="#slide2" className="btn btn-circle">❯</a>
+  return (
+    <div className="carousel w-full mt-12">
+      <div id="slide1" className="carousel-item relative md:h-[450px] w-full">
+        <img
+          src={
+            "https://www.learningresources.co.uk/media/catalog/category/Category-Header_Age_5yr.jpg"
+          }
+          className="w-full"
+        />
+
+        <div className="absolute h-full left-0  bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
+          <div className="text-white ms-16 mt-24">
+            <h1 className="font-bold text-6xl text-yellow-500">FINDUS TOYS</h1>
+            <p className="my-4 font-semibold">
+              Findus Toys are One of the Best Toys It's Provide kid's Toys.
+              <br />
+              Kid's Toys Help for express kid's knoledge
+            </p>
+            <button className="btn ">Learn More</button>
+          </div>
+        </div>
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide4" className="btn btn-circle">
+            ❮
+          </a>
+          <a href="#slide2" className="btn btn-circle">
+            ❯
+          </a>
+        </div>
+      </div>
+      <div id="slide2" className="carousel-item relative md:h-[450px] w-full">
+        <img
+          src={
+            "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2020_12/1549418/educational-toys-kids-coronavirus-code-botzee-today-main1-200317.jpg"
+          }
+          className="w-full"
+        />
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide1" className="btn btn-circle">
+            ❮
+          </a>
+          <a href="#slide3" className="btn btn-circle">
+            ❯
+          </a>
+        </div>
+      </div>
+      <div id="slide3" className="carousel-item relative md:h-[450px] w-full">
+        <img
+          src={
+            "https://assets.weforum.org/article/image/large_pRuRk-w2CWEPcIkp4PnEem8-qfuF_1XEizUk0x6JWAY.jpg"
+          }
+          className="w-full"
+        />
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide2" className="btn btn-circle">
+            ❮
+          </a>
+          <a href="#slide4" className="btn btn-circle">
+            ❯
+          </a>
+        </div>
+      </div>
+      <div id="slide4" className="carousel-item relative md:h-[450px] w-full">
+        <img
+          src={"https://i.ytimg.com/vi/pDAl3jI3xvs/maxresdefault.jpg"}
+          className="w-full"
+        />
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide3" className="btn btn-circle">
+            ❮
+          </a>
+          <a href="#slide1" className="btn btn-circle">
+            ❯
+          </a>
+        </div>
+      </div>
     </div>
-  </div> 
-  <div id="slide2" className="carousel-item relative w-full">
-    <img src="/images/stock/photo-1609621838510-5ad474b7d25d.jpg" className="w-full" />
-    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide1" className="btn btn-circle">❮</a> 
-      <a href="#slide3" className="btn btn-circle">❯</a>
-    </div>
-  </div> 
-  <div id="slide3" className="carousel-item relative w-full">
-    <img src="/images/stock/photo-1414694762283-acccc27bca85.jpg" className="w-full" />
-    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide2" className="btn btn-circle">❮</a> 
-      <a href="#slide4" className="btn btn-circle">❯</a>
-    </div>
-  </div> 
-  <div id="slide4" className="carousel-item relative w-full">
-    <img src="/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" className="w-full" />
-    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide3" className="btn btn-circle">❮</a> 
-      <a href="#slide1" className="btn btn-circle">❯</a>
-    </div>
-  </div>
-</div>
-    );
+  );
 };
 
 export default Banner;
