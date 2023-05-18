@@ -25,7 +25,7 @@ const Header = () => {
 
   const [showSrc, setShowSrc] = useState(false);
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 bg-black text-white">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -108,12 +108,12 @@ const Header = () => {
                 />
                 <button
                   onClick={() => setShowSrc(false)}
-                  className="absolute h-12 w-38 font-bold my-auto right-4"
+                  className="absolute h-12 w-38 font-bold my-auto right-4 text-black"
                 >
                   X
                 </button>
               </div>
-              <button className="border px-3 py-3  rounded-md transition hover:bg-black hover:text-white ">
+              <button className="border px-3 py-3  rounded-md transition bg-yellow-500  hover:bg-black hover:text-white ">
                 Search
               </button>
             </div>

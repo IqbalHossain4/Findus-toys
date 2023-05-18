@@ -9,10 +9,8 @@ import { EffectCoverflow, Pagination } from "swiper";
 
 export default function Gallery() {
   return (
-    <>
-      <h1 className="mt-24 mb-12 text-center font-bold text-5xl">
-        Our Gallery
-      </h1>
+    <div className="bg-yellow-500 px-4 py-8 my-16">
+      <h1 className="mb-12 text-center font-bold text-5xl">Our Gallery</h1>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
@@ -27,7 +25,7 @@ export default function Gallery() {
         }}
         pagination={true}
         modules={[EffectCoverflow, Pagination]}
-        className="mySwiper"
+        className="mySwiper bg-white"
       >
         <SwiperSlide className="img-wrap">
           <img
@@ -93,6 +91,6 @@ export default function Gallery() {
           />
         </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 }
