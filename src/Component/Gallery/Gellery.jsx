@@ -29,32 +29,68 @@ export default function Gallery() {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        <SwiperSlide className="img-wrap">
+          <img
+            src={
+              "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1631805748-educational-toys-for-toddlers-desk-1631805697.jpg"
+            }
+          />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+        <SwiperSlide className="img-wrap">
+          <img
+            src={
+              "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-720w,f_auto,q_auto:best/newscms/2023_18/1509206/41tpunfxm0l-5dd40073ad532.jpg"
+            }
+          />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+        <SwiperSlide className="img-wrap">
+          <img
+            src={
+              "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1594908357-410VeJnKctL.jpg"
+            }
+          />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+        <SwiperSlide className="img-wrap">
+          <img
+            src={
+              "https://images.othoba.com/images/thumbs/0338346_educational-computer-abc-and-123-learning-kids-toy-mixed_400.jpeg"
+            }
+          />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+        <SwiperSlide className="img-wrap">
+          <img
+            src={
+              "https://static-01.daraz.com.bd/p/c8957071f5b61b8f042a7b410beae493.jpg_720x720.jpg"
+            }
+          />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+        <SwiperSlide className="img-wrap">
+          <img
+            src={
+              "https://myhappyhelpers.com.au/cdn/shop/products/wooden-educational-language-development-cards-my-happy-helpers.jpg"
+            }
+          />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+        <SwiperSlide className="img-wrap">
+          <img
+            src={
+              "https://m.media-amazon.com/images/I/71jBqnyZWWL._AC_SL1500_.jpg"
+            }
+          />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+        <SwiperSlide className="img-wrap">
+          <img
+            src={
+              "https://besttoys4toddlers.com/wp-content/uploads/2015/10/Educational-Insights-Design-Drill-Take-Along-Toolkit.jpg"
+            }
+          />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+        <SwiperSlide className="img-wrap">
+          <img
+            src={
+              "https://lzd-img-global.slatic.net/g/p/54b75201342c51e88437f761147b84c5.jpg_720x720q80.jpg"
+            }
+          />
         </SwiperSlide>
       </Swiper>
     </>
