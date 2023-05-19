@@ -3,6 +3,7 @@ import { useEffect } from "react";
 
 const AddToy = () => {
   const [toys, setToys] = useState([]);
+
   useEffect(() => {
     fetch("http://localhost:5000/toy")
       .then((res) => res.json())
@@ -16,7 +17,7 @@ const AddToy = () => {
     const name = e.target.product.value;
     const subcategory = e.target.category.value;
     const available_quantity = e.target.quantity.value;
-    const rating = e.target.rating.ratings;
+    const rating = e.target.rating.value;
     const price = e.target.price.value;
     const email = e.target.email.value;
     const picture = e.target.photo.value;
@@ -41,7 +42,6 @@ const AddToy = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          alert("are you seriouse");
           form.reset("");
         }
       });
