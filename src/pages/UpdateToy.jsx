@@ -81,12 +81,12 @@ const UpdateToy = () => {
             />
           </div>
         </div>
-        {/* <textarea
+        <textarea
           name="details"
           defaultValue={details}
           className="text-center w-full   font-semibold p-2 border outline-none border-blue-400 rounded mb-4"
           placeholder="Product details"
-        ></textarea> */}
+        ></textarea>
 
         <input
           className="transition hover:bg-gray-800 bg-yellow-500 text-center w-full mt-4 py-2 rounded text-white font-bold"

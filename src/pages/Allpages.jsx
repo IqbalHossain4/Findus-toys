@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
-import { FaStarHalfAlt } from "react-icons/fa";
+import { AuthContext } from "../context/AuthProvider";
+
 const Allpages = () => {
   const [toys, setToys] = useState([]);
+
   useEffect(() => {
     fetch("http://localhost:5000/toy")
       .then((res) => res.json())
       .then((data) => setToys(data));
-  }, []);
+  }, [toys]);
 
   console.log(toys);
   return (

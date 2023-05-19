@@ -4,28 +4,30 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div>
-      <footer className="footer p-10 bg-black text-white text-base-content">
-        <div>
-          <span className="footer-title">Services</span>
-          <a className="link link-hover">Kids Toy</a>
-          <a className="link link-hover">Educational Toy</a>
-          <a className="link link-hover">Learning Toy</a>
-          <a className="link link-hover">Fun Toy</a>
-        </div>
-        <div>
-          <span className="footer-title">Company</span>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Facilities</a>
-        </div>
-        <div>
-          <span className="footer-title">Legal</span>
-          <a className="link link-hover">Terms of use</a>
-          <a className="link link-hover">Privacy policy</a>
-          <a className="link link-hover">Cookie policy</a>
-        </div>
-      </footer>
+      <div>
+        <footer className="footer p-10 bg-black text-white text-base-content">
+          <div className="mx-auto">
+            <span className="footer-title">Services</span>
+            <a className="link link-hover">Kids Toy</a>
+            <a className="link link-hover">Educational Toy</a>
+            <a className="link link-hover">Learning Toy</a>
+            <a className="link link-hover">Fun Toy</a>
+          </div>
+          <div className="mx-auto">
+            <span className="footer-title">Company</span>
+            <a className="link link-hover">About us</a>
+            <a className="link link-hover">Contact</a>
+            <a className="link link-hover">Jobs</a>
+            <a className="link link-hover">Facilities</a>
+          </div>
+          <div className="mx-auto">
+            <span className="footer-title">Legal</span>
+            <a className="link link-hover">Terms of use</a>
+            <a className="link link-hover">Privacy policy</a>
+            <a className="link link-hover">Cookie policy</a>
+          </div>
+        </footer>
+      </div>
       <footer className="footer px-10 py-4 border-t bg-yellow-500 text-base-content border-base-300">
         <div className="items-center grid-flow-col">
           <div className="w-[80px] h-[50px]">

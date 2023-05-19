@@ -1,15 +1,16 @@
+import React, { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Home from "./Layout/Home";
 import Main from "./Layout/Main";
 import Signin from "./pages/Signin";
-import WrapTabs from "./Component/Tabs";
 import SignUp from "./pages/SignUp";
 import MyToys from "./pages/MyToys";
 import PriveteRoute from "./PriveteRouter/PriveteRoute";
-import Allpages from "./pages/Allpages";
-import ToyDetails from "./pages/ToyDetails";
-import AddToy from "./pages/AddToy";
+const Allpages = lazy(() => import("./pages/Allpages"));
+const ToyDetails = lazy(() => import("./pages/ToyDetails"));
+const AddToy = lazy(() => import("./pages/AddToy"));
 import UpdateToy from "./pages/UpdateToy";
+import LoadingSpinner from "./Component/loader/LoadingSpinner";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,11 +31,19 @@ const router = createBrowserRouter([
       },
       {
         path: "alltoys",
-        element: <Allpages />,
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <Allpages />
+          </Suspense>
+        ),
       },
       {
         path: "details/:id",
-        element: <ToyDetails />,
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <ToyDetails />
+          </Suspense>
+        ),
         loader: ({ params }) => fetch(`http://localhost:5000/toy/${params.id}`),
       },
       {
@@ -47,7 +56,11 @@ const router = createBrowserRouter([
       },
       {
         path: "addtoy",
-        element: <AddToy />,
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <AddToy />
+          </Suspense>
+        ),
       },
       {
         path: "updateToy/:id",

@@ -40,12 +40,16 @@ const Header = () => {
       <li>
         <Active to="/alltoys">All Toys</Active>
       </li>
-      <li>
-        <Active to="/mytoy">My Toys</Active>
-      </li>
-      <li>
-        <Active to="/addtoy">Add A Toy</Active>
-      </li>
+      {user && (
+        <li>
+          <Active to="/mytoy">My Toys</Active>
+        </li>
+      )}
+      {user && (
+        <li>
+          <Active to="/addtoy">Add A Toy</Active>
+        </li>
+      )}
       <li>
         <Active to="/about">Blogs</Active>
       </li>
