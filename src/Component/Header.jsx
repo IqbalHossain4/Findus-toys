@@ -23,8 +23,8 @@ const Header = () => {
         to={to}
         className={({ isActive }) =>
           isActive
-            ? "underline text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            : "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            ? "text-yellow-500 px-3 py-2 rounded-md text-base font-medium"
+            : "text-white"
         }
       >
         {children}
@@ -44,7 +44,7 @@ const Header = () => {
         <Active to="/mytoy">My Toys</Active>
       </li>
       <li>
-        <Active to="/product">Add A Toy</Active>
+        <Active to="/addtoy">Add A Toy</Active>
       </li>
       <li>
         <Active to="/about">Blogs</Active>
