@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../Context/AuthProvider";
+import { AuthContext } from "../context/AuthProvider";
 
 const SignUp = () => {
   const { user, createUser } = useContext(AuthContext);
@@ -71,7 +71,7 @@ const SignUp = () => {
   };
 
   return (
-    <div>
+    <div className="mb-16">
       <h1 className="text-center font-bold text-4xl underline mt-16">
         Please SignUp
       </h1>
@@ -129,13 +129,13 @@ const SignUp = () => {
             onChange={imgChange}
           />
           <input
-            className="bg-gray-800 hover:bg-gray-700 text-center w-full mt-4 py-2 rounded text-white font-bold"
+            className="transition hover:bg-gray-800 bg-yellow-500  text-center w-full mt-4 py-2 rounded text-white font-bold"
             type="submit"
             value="SignUp"
           />
           <p className="text-gray-600 mt-2">
             I have an Account?
-            <Link to="/login" className="ms-2 text-teal-600 font-semibold">
+            <Link to="/signin" className="ms-2 text-teal-600 font-semibold">
               SignIn
             </Link>
           </p>

@@ -1,29 +1,57 @@
 import React from "react";
+import { useContext } from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Link as NavLink } from "react-router-dom";
+import { AuthContext } from "../context/AuthProvider";
 
 const Header = () => {
+  const [showSrc, setShowSrc] = useState(false);
+  const { user, loguts } = useContext(AuthContext);
+
+  console.log(user);
+  const handleLogout = () => {
+    loguts()
+      .then(() => {})
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
+  const Active = ({ to, children }) => {
+    return (
+      <NavLink
+        to={to}
+        className={({ isActive }) =>
+          isActive
+            ? "underline text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            : "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+        }
+      >
+        {children}
+      </NavLink>
+    );
+  };
+
   const navItems = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        <Active to="/">Home</Active>
       </li>
       <li>
-        <Link to="/product">All Toys</Link>
+        <Active to="/alltoys">All Toys</Active>
       </li>
       <li>
-        <Link to="/product">My Toys</Link>
+        <Active to="/mytoy">My Toys</Active>
       </li>
       <li>
-        <Link to="/product">Add A Toy</Link>
+        <Active to="/product">Add A Toy</Active>
       </li>
       <li>
-        <Link to="/about">Blogs</Link>
+        <Active to="/about">Blogs</Active>
       </li>
     </>
   );
 
-  const [showSrc, setShowSrc] = useState(false);
   return (
     <div className="navbar bg-base-100 bg-black text-white">
       <div className="navbar-start">
@@ -119,7 +147,23 @@ const Header = () => {
             </div>
           )}
         </div>
-        <a className="btn">Login</a>
+        {user && (
+          <Active to="/">
+            <img
+              title={user?.displayName}
+              className="rounded-full w-12 h-12 mr-4"
+              src={user?.photoURL}
+              alt=""
+            />
+          </Active>
+        )}
+        {!user ? (
+          <Link to="/signin" className="btn">
+            Login
+          </Link>
+        ) : (
+          <button onClick={handleLogout}>LogOut</button>
+        )}
       </div>
     </div>
   );

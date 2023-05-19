@@ -1,8 +1,8 @@
 import React from "react";
 import { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { AuthContext } from "../../Context/AuthProvider";
-import LoadingSpinner from "../loader/LoadingSpinner";
+import { AuthContext } from "../context/AuthProvider";
+import LoadingSpinner from "../Component/loader/LoadingSpinner";
 
 const PriveteRoute = ({ children }) => {
   const location = useLocation();
@@ -14,7 +14,7 @@ const PriveteRoute = ({ children }) => {
     return children;
   }
   return (
-    <Navigate to="/login" replace={true} state={{ from: location }}></Navigate>
+    <Navigate to="/signin" replace={true} state={{ from: location }}></Navigate>
   );
 };
 

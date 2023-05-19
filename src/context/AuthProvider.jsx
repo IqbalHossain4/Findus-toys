@@ -11,7 +11,7 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
-import app from "../Firebase/firebase.init";
+import app from "../firebase/firebase.info";
 import { useEffect } from "react";
 import LoadingSpinner from "../Component/loader/LoadingSpinner";
 

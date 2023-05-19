@@ -1,9 +1,8 @@
 import React from "react";
 import { getAuth, GithubAuthProvider, updateProfile } from "firebase/auth";
-import app from "../../Firebase/firebase.init";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { AuthContext } from "../../Context/AuthProvider";
+import { AuthContext } from "../context/AuthProvider";
 
 const Signin = () => {
   const { user, signIn, signInGoogle, signInGithub } = useContext(AuthContext);
@@ -51,7 +50,7 @@ const Signin = () => {
       });
   };
   return (
-    <div>
+    <div className="mb-16">
       <h1 className="text-center font-bold text-4xl underline mt-16">
         Please SignIn
       </h1>
@@ -86,7 +85,7 @@ const Signin = () => {
             />
           </div>
           <input
-            className="bg-gray-800 hover:bg-gray-700 text-center w-full mt-4 py-2 rounded text-white font-bold"
+            className="transition hover:bg-gray-800 bg-yellow-500 text-center w-full mt-4 py-2 rounded text-white font-bold"
             type="submit"
             value="SignIn"
           />
@@ -102,15 +101,6 @@ const Signin = () => {
             <img
               src={
                 "https://freepngimg.com/download/google/66903-google-pay-gboard-platform-logo-cloud.png"
-              }
-              alt=""
-            />
-          </button>
-
-          <button onClick={handleGithub} className="w-12">
-            <img
-              src={
-                "https://logos-world.net/wp-content/uploads/2020/11/GitHub-Logo.png"
               }
               alt=""
             />
