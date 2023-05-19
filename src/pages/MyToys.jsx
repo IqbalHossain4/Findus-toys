@@ -99,7 +99,9 @@ const MyToys = () => {
                   <td>{toy.available_quantity}</td>
                   <th>
                     <Link to={`/updateToy/${toy._id}`}>
-                      <button className="btn btn-ghost btn-xs">Edit</button>
+                      <button className="transition hover:bg-gray-800 bg-yellow-500 text-center w-full mt-4 py-2 rounded text-white font-bold">
+                        Edit
+                      </button>
                     </Link>
                   </th>
                 </tr>

@@ -12,7 +12,7 @@ const UpdateToy = () => {
     const available_quantity = e.target.quantity.value;
     const price = e.target.price.value;
     const details = e.target.details.value;
-    const UpdateToys = {
+    const updateToys = {
       name,
       subcategory,
       available_quantity,
@@ -24,12 +24,18 @@ const UpdateToy = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(UpdateToys),
+      body: JSON.stringify(updateToys),
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.modifiedCount > 0) {
-          alert("ok");
+        console.log(data.insertedId);
+        if (data) {
+          Swal.fire({
+            title: "Success!",
+            text: "Coffee added Successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
         }
       });
   };
