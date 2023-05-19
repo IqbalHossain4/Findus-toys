@@ -82,13 +82,7 @@ const Header = () => {
         <div className="flex items-center">
           <div className="w-[80px] h-[50px]">
             <Link to="/">
-              <img
-                className="w-full h-full"
-                src={
-                  "https://cdn.dribbble.com/users/1700393/screenshots/14210857/media/53dda477de8b0c57b3abd5d144e89312.png"
-                }
-                alt=""
-              />
+              <img src={"logo.png"} className="w-full h-full" alt="" />
             </Link>
           </div>
           <div>

@@ -10,7 +10,7 @@ import { EffectCoverflow, Pagination } from "swiper";
 export default function Gallery() {
   return (
     <div className="bg-yellow-500 px-4 py-8 my-16">
-      <h1 className="mb-12 text-center font-bold text-5xl">Our Gallery</h1>
+      <h1 className="mb-12 text-center font-bold text-4xl">Our Gallery</h1>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
