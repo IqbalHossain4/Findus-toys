@@ -131,7 +131,7 @@ const AddToy = () => {
         <input
           className="transition hover:bg-gray-800 bg-yellow-500 text-center w-full mt-4 py-2 rounded text-white font-bold"
           type="submit"
-          value="Submit"
+          value="Add Toys"
         />
       </form>
     </div>

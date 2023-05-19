@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthProvider";
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -15,16 +17,34 @@ const MyToys = () => {
   }, [toys]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/toy/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deleteCount > 0) {
-          setDeleteToy(!deleteToy);
-        }
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          "Deleted!",
+          "Your file has been deleted.",
+          "success",
+          fetch(`http://localhost:5000/toy/${id}`, {
+            method: "DELETE",
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.deleteCount > 0) {
+                setDeleteToy(!deleteToy);
+              }
+            })
+        );
+      }
+    });
   };
+
   return (
     <div>
       <div className="overflow-x-auto w-full">
@@ -78,7 +98,9 @@ const MyToys = () => {
                   </td>
                   <td>{toy.available_quantity}</td>
                   <th>
-                    <button className="btn btn-ghost btn-xs">Edit</button>
+                    <Link to={`/updateToy/${toy._id}`}>
+                      <button className="btn btn-ghost btn-xs">Edit</button>
+                    </Link>
                   </th>
                 </tr>
               );
