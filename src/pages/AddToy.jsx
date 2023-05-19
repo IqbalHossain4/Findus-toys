@@ -19,6 +19,7 @@ const AddToy = () => {
     const available_quantity = e.target.quantity.value;
     const rating = e.target.rating.value;
     const price = e.target.price.value;
+    const details = e.target.details.value;
     const email = e.target.email.value;
     const picture = e.target.photo.value;
     const toys = {
@@ -31,7 +32,9 @@ const AddToy = () => {
       rating,
       price,
       email,
+      details,
     };
+
     fetch("http://localhost:5000/toy", {
       method: "POST",
       headers: {
@@ -114,6 +117,11 @@ const AddToy = () => {
             />
           </div>
         </div>
+        <textarea
+          name="details"
+          className="text-center w-full   font-semibold p-2 border outline-none border-blue-400 rounded mb-4"
+          placeholder="Product details"
+        ></textarea>
         <input
           className="text-center w-full   font-semibold p-2 border outline-none border-blue-400 rounded mb-4"
           placeholder="photo url"
