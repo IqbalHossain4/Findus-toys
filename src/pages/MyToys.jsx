@@ -46,7 +46,10 @@ const MyToys = () => {
   };
 
   return (
-    <div>
+    <div className="mt-16">
+      <h1 className="text-center underline bg-black py-4 text-yellow-500 font-bold text-4xl  my-16">
+        My Toys
+      </h1>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           {/* head */}

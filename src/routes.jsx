@@ -11,10 +11,13 @@ const ToyDetails = lazy(() => import("./pages/ToyDetails"));
 const AddToy = lazy(() => import("./pages/AddToy"));
 import UpdateToy from "./pages/UpdateToy";
 import LoadingSpinner from "./Component/loader/LoadingSpinner";
+import ErrorPage from "./Component/ErrorPage/ErrorPage";
+import Blogs from "./pages/Blogs";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -66,6 +69,10 @@ const router = createBrowserRouter([
         path: "updateToy/:id",
         element: <UpdateToy />,
         loader: ({ params }) => fetch(`http://localhost:5000/toy/${params.id}`),
+      },
+      {
+        path: "blogs",
+        element: <Blogs />,
       },
     ],
   },

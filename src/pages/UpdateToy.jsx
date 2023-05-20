@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateToy = () => {
   const toys = useLoaderData();
@@ -29,14 +30,14 @@ const UpdateToy = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        // if (data) {
-        //   Swal.fire({
-        //     title: "Success!",
-        //     text: "Coffee added Successfully",
-        //     icon: "success",
-        //     confirmButtonText: "Cool",
-        //   });
-        // }
+        if (data) {
+          Swal.fire({
+            title: "Success!",
+            text: "Toy update Successfully",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+        }
       });
   };
   return (
@@ -58,7 +59,7 @@ const UpdateToy = () => {
             <input
               className="p-2 w-full md:w-1/3 border outline-none border-blue-400 rounded"
               max="4"
-              type="number"
+              type="text"
               defaultValue={subcategory}
               name="category"
               placeholder="category"

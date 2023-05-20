@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
   const [toys, setToys] = useState([]);
@@ -46,13 +47,21 @@ const AddToy = () => {
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Toy added Successfully",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
           form.reset("");
         }
       });
   };
   return (
     <div>
-      <h1 className="font-bold text-3xl text-center mt-16">Add Toys</h1>
+      <h1 className="text-center underline bg-black py-4 text-yellow-500 font-bold text-4xl mt-16">
+        Add New Toy
+      </h1>
       <form
         onSubmit={addToys}
         className="border p-16 rounded border-yellow-400 my-16"
@@ -82,7 +91,7 @@ const AddToy = () => {
             <input
               className="p-2 w-full md:w-1/3 border outline-none border-blue-400 rounded"
               max="4"
-              type="number"
+              type="text"
               name="category"
               placeholder="category"
             />

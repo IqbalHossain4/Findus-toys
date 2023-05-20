@@ -51,7 +51,7 @@ const Header = () => {
         </li>
       )}
       <li>
-        <Active to="/about">Blogs</Active>
+        <Active to="/blogs">Blogs</Active>
       </li>
     </>
   );
@@ -78,7 +78,7 @@ const Header = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 font-semibold"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-black text-white rounded-box w-52 font-semibold"
           >
             {navItems}
           </ul>
