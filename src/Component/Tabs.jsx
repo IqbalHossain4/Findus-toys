@@ -5,11 +5,14 @@ import { Link } from "react-router-dom";
 import { FaStarHalfAlt } from "react-icons/fa";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import { AuthContext } from "../context/AuthProvider";
+import { useLocation, useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 const WrapTabs = () => {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   //all toy
   const [alltoys, setAlltoys] = useState([]);
   useEffect(() => {
@@ -49,7 +52,6 @@ const WrapTabs = () => {
       .then((res) => res.json())
       .then((data) => setTools(data));
   }, []);
-  const [shown, setShown] = useState(false);
 
   return (
     <div className="mt-16 pt-8" data-aos="fade-up" data-aos-duration="2000">
@@ -97,10 +99,7 @@ const WrapTabs = () => {
                         </div>
                         <div className="text-center">
                           <Link to={user ? `/details/${toy._id}` : "/signin"}>
-                            <button
-                              onClick={() => setShown(true)}
-                              className="transition hover:bg-gray-800 bg-yellow-500 text-center w-full mt-4 py-2 rounded text-white font-bold"
-                            >
+                            <button className="transition hover:bg-gray-800 bg-yellow-500 text-center w-full mt-4 py-2 rounded text-white font-bold">
                               View Details
                             </button>
                           </Link>

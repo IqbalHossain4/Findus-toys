@@ -44,7 +44,9 @@ const router = createBrowserRouter([
         path: "details/:id",
         element: (
           <Suspense fallback={<LoadingSpinner />}>
-            <ToyDetails />
+            <PriveteRoute>
+              <ToyDetails />
+            </PriveteRoute>
           </Suspense>
         ),
         loader: ({ params }) =>

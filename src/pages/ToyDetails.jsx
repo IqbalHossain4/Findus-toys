@@ -14,7 +14,6 @@ const ToyDetails = () => {
   };
 
   titles("Toy-Details");
-
   return (
     <div className="w-[100%] md:h-[600px] mt-16">
       <div className="md:flex items-center justify-evenly my-16">
