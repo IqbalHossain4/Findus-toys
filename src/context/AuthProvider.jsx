@@ -45,11 +45,6 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, provider);
   };
 
-  const signInGithub = () => {
-    setLoader(true);
-    return signInWithPopup(auth, gitProvider);
-  };
-
   const loguts = () => {
     return signOut(auth);
   };
@@ -61,7 +56,7 @@ const AuthProvider = ({ children }) => {
         const loggedUser = {
           email: user.email,
         };
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://ass11.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -88,7 +83,6 @@ const AuthProvider = ({ children }) => {
     signInGoogle,
     loguts,
     loader,
-    signInGithub,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

@@ -1,8 +1,10 @@
 import React from "react";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 const Banner = () => {
   return (
-    <div className="carousel w-full mt-12 rounded">
+    <div className="carousel w-full mt-12 rounded" data-aos="fade-down" data-aos-duration="1000">
       <div id="slide1" className="carousel-item relative md:h-[450px] w-full">
         <img
           src={

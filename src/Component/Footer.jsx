@@ -1,9 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 const Footer = () => {
   return (
-    <div className="mt-16">
+    <div
+      className="mt-16"
+      data-aos="fade-zoom-in"
+      data-aos-easing="ease-in-back"
+      data-aos-delay="300"
+      data-aos-offset="0"
+    >
       <div>
         <footer className="footer p-10 bg-black text-white text-base-content">
           <div className="mx-auto">

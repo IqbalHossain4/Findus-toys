@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Blogs = () => {
+  // dynamic title
+  const titles = (title) => {
+    useEffect(() => {
+      document.title = `${title}-Findus`;
+    }, [title]);
+  };
+
+  titles("Blogs");
   return (
     <div>
       <div className="my-16 ms-8">

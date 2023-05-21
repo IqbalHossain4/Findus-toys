@@ -4,12 +4,13 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "./styles.css";
-
 import { EffectCoverflow, Pagination } from "swiper";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 export default function Gallery() {
   return (
-    <div className="bg-yellow-500 px-4 py-8 my-16">
+    <div className="bg-yellow-500 px-4 py-8 my-16" data-aos="zoom-in">
       <h1 className="mb-12 text-center font-bold text-4xl">Our Gallery</h1>
       <Swiper
         effect={"coverflow"}

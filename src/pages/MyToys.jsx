@@ -11,7 +11,7 @@ const MyToys = () => {
   const [toys, setToys] = useState([]);
   const [deleteToy, setDeleteToy] = useState(false);
   useEffect(() => {
-    fetch(`http://localhost:5000/toy?email=${user?.email}`)
+    fetch(`https://ass11.vercel.app/toy?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, [toys]);
@@ -31,7 +31,7 @@ const MyToys = () => {
           "Deleted!",
           "Your file has been deleted.",
           "success",
-          fetch(`http://localhost:5000/toy/${id}`, {
+          fetch(`https://ass11.vercel.app/toy/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
@@ -44,7 +44,14 @@ const MyToys = () => {
       }
     });
   };
+  // dynamic title
+  const titles = (title) => {
+    useEffect(() => {
+      document.title = `${title}-Findus`;
+    }, [title]);
+  };
 
+  titles("My-Toys");
   return (
     <div className="mt-16">
       <h1 className="text-center underline bg-black py-4 text-yellow-500 font-bold text-4xl  my-16">

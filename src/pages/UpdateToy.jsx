@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -20,7 +20,7 @@ const UpdateToy = () => {
       price,
       // details,
     };
-    fetch(`http://localhost:5000/toy/${_id}`, {
+    fetch(`https://ass11.vercel.app/toy/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -40,6 +40,14 @@ const UpdateToy = () => {
         }
       });
   };
+  // dynamic title
+  const titles = (title) => {
+    useEffect(() => {
+      document.title = `${title}-Findus`;
+    }, [title]);
+  };
+
+  titles("Update-Toys");
   return (
     <div>
       <h1 className="font-bold text-3xl text-center mt-16">Update Toys</h1>

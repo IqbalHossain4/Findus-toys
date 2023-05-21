@@ -47,7 +47,8 @@ const router = createBrowserRouter([
             <ToyDetails />
           </Suspense>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/toy/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`https://ass11.vercel.app/toy/${params.id}`),
       },
       {
         path: "mytoy",
@@ -68,7 +69,8 @@ const router = createBrowserRouter([
       {
         path: "updateToy/:id",
         element: <UpdateToy />,
-        loader: ({ params }) => fetch(`http://localhost:5000/toy/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`https://ass11.vercel.app/toy/${params.id}`),
       },
       {
         path: "blogs",

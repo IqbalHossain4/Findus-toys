@@ -1,14 +1,24 @@
-import React from "react";
-import { getAuth, GithubAuthProvider, updateProfile } from "firebase/auth";
+import React, { useEffect } from "react";
+import { getAuth, updateProfile } from "firebase/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthProvider";
 
 const Signin = () => {
-  const { user, signIn, signInGoogle, signInGithub } = useContext(AuthContext);
+  const { user, signIn, signInGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+
+  // dynamic title
+  const titles = (title) => {
+    useEffect(() => {
+      document.title = `${title}-Findus`;
+    }, [title]);
+  };
+
+  titles("SignIn");
+
   const handleSignIn = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
@@ -37,18 +47,7 @@ const Signin = () => {
         console.log(error.message);
       });
   };
-  const handleGithub = () => {
-    signInGithub()
-      .then((result) => {
-        const credential = GithubAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        const user = result.user;
-        navigate(from);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
+
   return (
     <div className="mb-16">
       <h1 className="text-center underline bg-black py-4 text-yellow-500 font-bold text-4xl mt-16">

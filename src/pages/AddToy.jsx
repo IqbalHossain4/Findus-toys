@@ -6,7 +6,7 @@ const AddToy = () => {
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/toy")
+    fetch("https://ass11.vercel.app/toy")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);
@@ -36,7 +36,7 @@ const AddToy = () => {
       details,
     };
 
-    fetch("http://localhost:5000/toy", {
+    fetch("https://ass11.vercel.app/toy", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -57,6 +57,16 @@ const AddToy = () => {
         }
       });
   };
+
+  // dynamic title
+  const titles = (title) => {
+    useEffect(() => {
+      document.title = `${title}-Findus`;
+    }, [title]);
+  };
+
+  titles("Add-Toy");
+
   return (
     <div>
       <h1 className="text-center underline bg-black py-4 text-yellow-500 font-bold text-4xl mt-16">

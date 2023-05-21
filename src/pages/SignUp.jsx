@@ -1,5 +1,5 @@
 import { updateProfile } from "firebase/auth";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -22,6 +22,15 @@ const SignUp = () => {
       console.log(e);
     }
   };
+
+  // dynamic title
+  const titles = (title) => {
+    useEffect(() => {
+      document.title = `${title}-Findus`;
+    }, [title]);
+  };
+
+  titles("SignUp");
 
   const handleSignUp = (event) => {
     event.preventDefault();

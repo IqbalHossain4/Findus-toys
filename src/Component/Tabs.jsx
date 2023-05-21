@@ -5,13 +5,15 @@ import { Link } from "react-router-dom";
 import { FaStarHalfAlt } from "react-icons/fa";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import { AuthContext } from "../context/AuthProvider";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const WrapTabs = () => {
   const { user } = useContext(AuthContext);
   //all toy
   const [alltoys, setAlltoys] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/toy")
+    fetch("https://ass11.vercel.app/toy")
       .then((res) => res.json())
       .then((data) => setAlltoys(data));
   }, []);
@@ -19,7 +21,7 @@ const WrapTabs = () => {
   //Science kits
   const [science, setScience] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/toy?subcategory=science")
+    fetch("https://ass11.vercel.app/toy?subcategory=science")
       .then((res) => res.json())
       .then((data) => setScience(data));
   }, []);
@@ -27,7 +29,7 @@ const WrapTabs = () => {
   //Math learning
   const [math, setMath] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/toy?subcategory=math")
+    fetch("https://ass11.vercel.app/toy?subcategory=math")
       .then((res) => res.json())
       .then((data) => setMath(data));
   }, []);
@@ -35,7 +37,7 @@ const WrapTabs = () => {
   //Engineering kits
   const [engineerin, setEngineerin] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/toy?subcategory=engineering_kits")
+    fetch("https://ass11.vercel.app/toy?subcategory=engineering_kits")
       .then((res) => res.json())
       .then((data) => setEngineerin(data));
   }, []);
@@ -43,16 +45,16 @@ const WrapTabs = () => {
   //Engineering tools
   const [tools, setTools] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/toy?subcategory=engineering_tools")
+    fetch("https://ass11.vercel.app/toy?subcategory=engineering_tools")
       .then((res) => res.json())
       .then((data) => setTools(data));
   }, []);
   const [shown, setShown] = useState(false);
 
   return (
-    <div className="mt-16 pt-8">
+    <div className="mt-16 pt-8" data-aos="fade-up" data-aos-duration="2000">
       <h1 className="font-bold  text-white  bg-black  text-center  text-4xl  py-16">
-        Our Popular Toys
+      Shop by category
       </h1>
       <div>
         <Tabs>
@@ -70,6 +72,8 @@ const WrapTabs = () => {
                   {alltoys.map((toy) => {
                     return (
                       <div
+                        data-aos="fade-up"
+                        data-aos-duration="1000"
                         key={toy._id}
                         className="border rounded p-4 shadow-md shadow-yellow-500"
                       >
@@ -113,6 +117,8 @@ const WrapTabs = () => {
                   {science.map((toy) => {
                     return (
                       <div
+                        data-aos="fade-up"
+                        data-aos-duration="1000"
                         key={toy._id}
                         className="border rounded p-4 shadow-md shadow-yellow-500"
                       >
@@ -153,6 +159,8 @@ const WrapTabs = () => {
                   {math.map((toy) => {
                     return (
                       <div
+                        data-aos="fade-up"
+                        data-aos-duration="1000"
                         key={toy._id}
                         className="border rounded p-4 shadow-md shadow-yellow-500"
                       >
@@ -193,6 +201,8 @@ const WrapTabs = () => {
                   {engineerin.map((toy) => {
                     return (
                       <div
+                      data-aos="fade-up"
+                        data-aos-duration="1000"
                         key={toy._id}
                         className="border rounded p-4 shadow-md shadow-yellow-500"
                       >
@@ -233,6 +243,8 @@ const WrapTabs = () => {
                   {tools.map((toy) => {
                     return (
                       <div
+                      data-aos="fade-up"
+                        data-aos-duration="1000"
                         key={toy._id}
                         className="border rounded p-4 shadow-md shadow-yellow-500"
                       >

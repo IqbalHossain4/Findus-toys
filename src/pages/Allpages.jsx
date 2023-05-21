@@ -7,28 +7,38 @@ const Allpages = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  // dynamic title
+  const titles = (title) => {
+    useEffect(() => {
+      document.title = `${title}-Findus`;
+    }, [title]);
+  };
+
+  titles("All-Toys");
+
   useEffect(() => {
-    fetch("http://localhost:5000/toy")
+    fetch("https://ass11.vercel.app/toy")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);
 
   //for search
   const handleSearch = () => {
-    fetch(`http://localhost:5000/search/${searchText}`)
+    fetch(`https://ass11.vercel.app/search/${searchText}`)
       .then((res) => res.json())
       .then((data) => setToys(data));
   };
 
   //sorting
   const handleSorting = () => {
-    fetch("http://localhost:5000/sort")
+    fetch("https://ass11.vercel.app/sort")
       .then((res) => res.json())
       .then((data) => setToys(data));
   };
 
   const handleDeceSorting = () => {
-    fetch("http://localhost:5000/sorts")
+    fetch("https://ass11.vercel.app/sorts")
       .then((res) => res.json())
       .then((data) => setToys(data));
   };

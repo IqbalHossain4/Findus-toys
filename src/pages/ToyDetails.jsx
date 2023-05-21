@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 import ReactStarsRating from "react-awesome-stars-rating";
 
 const ToyDetails = () => {
   const toys = useLoaderData();
   const { picture, name, price, rating, available_quantity, details } = toys;
+
+  // dynamic title
+  const titles = (title) => {
+    useEffect(() => {
+      document.title = `${title}-Findus`;
+    }, [title]);
+  };
+
+  titles("Toy-Details");
 
   return (
     <div className="w-[100%] md:h-[600px] mt-16">
