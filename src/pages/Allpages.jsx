@@ -27,6 +27,12 @@ const Allpages = () => {
       .then((data) => setToys(data));
   };
 
+  const handleDeceSorting = () => {
+    fetch("http://localhost:5000/sorts")
+      .then((res) => res.json())
+      .then((data) => setToys(data));
+  };
+
   return (
     <div className="overflow-x-auto w-full mb-16">
       <h1 className="text-center underline bg-black py-4 text-yellow-500 font-bold text-4xl my-16">
@@ -55,7 +61,14 @@ const Allpages = () => {
           onClick={handleSorting}
           className="py-2  text-white font-semibold px-6 bg-black rounded-md mb-8 hover:bg-yellow-500"
         >
-          Sort...
+          Acending...
+        </button>
+
+        <button
+          onClick={handleDeceSorting}
+          className="py-2 ms-4 text-white font-semibold px-6 bg-black rounded-md mb-8 hover:bg-yellow-500"
+        >
+          Decending...
         </button>
       </div>
       <div className="overflow-x-auto w-full">
