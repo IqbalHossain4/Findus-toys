@@ -54,7 +54,7 @@ const WrapTabs = () => {
   return (
     <div className="mt-16 pt-8" data-aos="fade-up" data-aos-duration="2000">
       <h1 className="font-bold  text-white  bg-black  text-center  text-4xl  py-16">
-      Shop by category
+        Shop by category...
       </h1>
       <div>
         <Tabs>
@@ -201,7 +201,7 @@ const WrapTabs = () => {
                   {engineerin.map((toy) => {
                     return (
                       <div
-                      data-aos="fade-up"
+                        data-aos="fade-up"
                         data-aos-duration="1000"
                         key={toy._id}
                         className="border rounded p-4 shadow-md shadow-yellow-500"
@@ -243,7 +243,7 @@ const WrapTabs = () => {
                   {tools.map((toy) => {
                     return (
                       <div
-                      data-aos="fade-up"
+                        data-aos="fade-up"
                         data-aos-duration="1000"
                         key={toy._id}
                         className="border rounded p-4 shadow-md shadow-yellow-500"
